@@ -1,9 +1,19 @@
-extends c
+extends cstyle
+## Main
+# main
+snippet main
+	#include <iostream>
 
+	int main(int argc, const char *argv[]) {
+		${0}
+
+
+		return 0;
+	}
 ##
 ## Preprocessor
 # #include <...>
-snippet incc
+snippet inc
 	#include <${1:iostream}>
 snippet binc
 	#include <boost/${1:shared_ptr}.hpp>
@@ -143,13 +153,7 @@ snippet dmfun2
 	}
 # namespace
 snippet ns
-	namespace ${1:`vim_snippets#Filename('', 'my')`} {
-		${0}
-	} /* namespace $1 */
-snippet ans
-	namespace {
-		${0}
-	}
+	namespace 
 ##
 ## Input/Output
 # std::cout
@@ -217,3 +221,19 @@ snippet af auto function
 	{
 		${0}
 	};
+
+snippet acm
+	#include <bits/stdc++.h>
+	using namespace std;
+	ifstream fin; void rdIn(const string& filename) {fin.open(filename); if (fin.good()) { cin.rdbuf(fin.rdbuf()); freopen(filename.c_str(), "r", stdin); } }
+	void debug(const char * __format, ...) { if (!fin.good()) return; va_list argv; __builtin_va_start(argv, __format); vprintf(__format, argv); va_end(argv); }
+
+	int main() {
+		rdIn("data.txt");
+
+		${0}
+
+
+		return 0;
+	}
+
