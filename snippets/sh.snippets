@@ -104,3 +104,10 @@ snippet fun
 	function ${1:function_name}() {
 		${0:#function_body}
 	}
+
+snippet icpc
+	while true; do
+		gcc $1 && ./a.out < data.txt
+		echo
+	done
+
